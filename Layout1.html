@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #parent {
+            width: 80%;
+
+            border: 0px solid red;
+            background-color: white;
+            margin: auto;
+            margin-top: 100px;
+            padding: 20px;
+
+        }
+
+        #nav {
+            width: 100%;
+
+            border: 0px solid red;
+            background-color: yellow;
+            margin-bottom: 20PX;
+            padding: 5px;
+
+        }
+
+        #nav>p {
+            font-size: 50px;
+            margin-top: -1px;
+            margin-bottom: -1px;
+
+        }
+
+        #container {
+            display: grid;
+            margin-top: 20px;
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            border: 0px solid red;
+
+            margin: auto;
+            padding-bottom: 20px;
+
+        }
+
+        #container>div {
+            display: grid;
+            border: 0px solid red;
+            margin: auto;
+            background-color: blue;
+            padding-right: 75%;
+            padding-bottom: 75%;
+            padding-top: 10px;
+            padding-left: 10px;
+            color: rgb(65, 63, 63);
+            font-size: 18px;
+
+
+        }
+
+        #container>div:nth-child(1) {
+            background-color: red;
+        }
+
+        #container>div:nth-child(2) {
+            background-color: #00ff2a;
+        }
+
+        #container>div:nth-child(3) {
+            background-color: blue;
+        }
+
+        #container>div:nth-child(4) {
+            background-color: rgb(129, 124, 124);
+        }
+
+        /* medium screen*/
+
+        @media only screen and (min-width:500px) and (max-width:768px) {
+            #container {
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 35px;
+
+            }
+
+            #container>div {
+                padding-right: 65%;
+
+            }
+
+
+        }
+
+        /* small screen*/
+        @media only screen and (min-width:320px) and (max-width: 499px) {
+            #container {
+                grid-template-columns: repeat(1, 1fr);
+
+            }
+
+
+
+            #container>div {
+                padding-bottom: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="nav">
+            <p>Navigation</p>
+        </div>
+        <div id="container">
+            <div>
+                BOX 1
+            </div>
+            <div>BOX 2</div>
+            <div>BOX 3</div>
+            <div>BOX 4</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
